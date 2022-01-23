@@ -1,0 +1,22 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "practise",
+  "main": "main.js",
+  "scripts": {
+    "format": "npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugene0928/weather_js.git"
+  },
+  "author": "Umidjon Tukhtaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugene0928/weather_js/issues"
+  },
+  "homepage": "https://github.com/eugene0928/weather_js#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
