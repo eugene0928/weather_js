@@ -42,4 +42,5 @@ header input {
 
 header input:focus {
     background-color: rgb(210, 174, 174);
+    border-radius: 0px 16px 0px 16px;
 }
