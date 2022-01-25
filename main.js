@@ -8,18 +8,20 @@ const searchBox = document.querySelector('.search-box')
 searchBox.addEventListener('keypress', (e) => {
     if(e.keyCode === 13 ) {
         getResult(searchBox.value)
+        searchBox.value = ""
     }
 })
+
 
 function getResult(query) {
     fetch(`${api.baseUrl}weather?q=${query}&units=metric&APPID=${api.key}`).then(weather => weather.json())
         .then(showResult)
 }
 
-function showResult(result) {
+ function showResult(result) {
     console.log(result)
     let city = document.querySelector('.location .city')
-    city.innerHTML = `${result.name}  ${result.sys.country}`
+    city.innerHTML = `${result.name}`
 
     let now = new Date();
     let date = document.querySelector('.location .date')
@@ -30,6 +32,49 @@ function showResult(result) {
 
     let weather = document.querySelector('.main-temp .type-climate');
     weather.innerHTML = result.weather[0]['main']
+
+   
+    switch(result.weather[0]['main']) {
+        case 'Mist': 
+            document.body.style.backgroundImage = "url('../src/mist.jpg')";
+            break;
+        
+        case 'Haze': 
+            document.body.style.backgroundImage = "url('../src/mist.jpg')";
+            break;
+
+        case 'Smoke': 
+            document.body.style.backgroundImage = "url('../src/mist.jpg')";
+            break;
+        
+        case 'Clouds':
+             document.body.style.backgroundImage = "url('../src/cloudy.jpg')";
+            break;
+
+        case 'Fog':
+            document.body.style.backgroundImage = "url('../src/fog.jpeg')";
+            break;
+
+        case 'Rain':
+            document.body.style.backgroundImage = "url('../src/rainy.jpg')";
+            break;
+
+        case 'Snow':
+            document.body.style.backgroundImage = "url('../src/snowy.jpg')";
+            break;
+
+        case 'Wind':
+            document.body.style.backgroundImage = "url('../src/windy.jpg')";
+            break;
+
+        case 'Clear':
+            document.body.style.backgroundImage = "url('../src/clear.jpg')";
+            break;
+        
+        default:
+            document.body.style.backgroundImage = "url('../src/river.jpeg')";
+            break;
+    }
 
     let high_low = document.querySelector('.main-temp .high-low')
     high_low.innerHTML = `${Math.round(result.main.temp_max)}°C / ${Math.round(result.main.temp_min)}°C`
