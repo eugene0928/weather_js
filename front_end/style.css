@@ -25,9 +25,9 @@ app-wrap {
 header {
   display: flex;
   justify-content: center;
-  /*align-items: center;*/
-  padding: 50px 15px 15px;
-  margin: 1px 60px 90px 1000px;
+  align-items: center;
+  /* padding: 50px 15px 15px;
+  margin: 1px 60px 90px 1000px; */
 }
 
 header input {
@@ -36,7 +36,7 @@ header input {
   padding: 10px 15px;
   border: none;
   outline: none;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 16px 0;
   border-bottom: 2px solid #df8e00;
   color: #444;
@@ -53,10 +53,10 @@ header input:focus {
 main {
   margin-top: 20vh;
   padding: 25px 25px 50px;
-  display: flex;
+  display: absolute;
   flex-direction: column;
-  /*align-items: center;*/
-  /*text-align: center;*/
+  align-items: center;
+  /* text-align: center; */
   margin-left: 25%;
 }
 
@@ -65,6 +65,7 @@ main {
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 5px;
+  text-shadow: 1px 5px rgba(0, 0, 0, 0.6);
 }
 
 .location .date {
